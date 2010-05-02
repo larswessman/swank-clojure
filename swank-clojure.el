@@ -226,7 +226,7 @@ will be used over paths too.)"
 ;;;###autoload
 (defun swank-clojure-cmd ()
   "Create the command to start clojure according to current settings."
-  (swank-clojure-check-install)
+;  (swank-clojure-check-install)
   (if swank-clojure-binary
       (if (listp swank-clojure-binary)
           swank-clojure-binary
