@@ -107,7 +107,10 @@
       (.append w \"))
   nil))
 
-(defmethod print-object clojure.lang.ISeq [o, #^Writer w]
+(defmethod print-object clojure.lang.PersistentList$EmptyList [o, #^Writer w]
+  (.write w "nil"))
+
+(defmethod print-object clojure.lang.PersistentList [o, #^Writer w]
   (.write w "(")
   (print-object (first o) w)
   (doseq [item (rest o)]
